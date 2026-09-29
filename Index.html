@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session King Cricket - Premium Tips</title>
+    <!-- Ultra-lightweight Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --accent-gold: #ffb703;
+            --accent-neon: #00f2fe;
+            --accent-green: #25d366;
+            --text-main: #f0f6fc;
+            --text-sub: #8b949e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(255, 183, 3, 0.08) 0%, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle glowing border */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-neon), transparent);
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
+        }
+
+        .badge-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 242, 254, 0.12);
+            color: var(--accent-neon);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+
+        .channel-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .channel-subtitle {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 6px;
+            border-radius: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+        }
+
+        .features-list {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            color: var(--accent-neon);
+            font-size: 1.1rem;
+        }
+
+        /* Pulsing Telegram CTA Button */
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, #0088cc 0%, #00f2fe 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.35);
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            animation: pulse-button 2s infinite ease-in-out;
+        }
+
+        .btn-telegram:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 242, 254, 0.5);
+        }
+
+        @keyframes pulse-button {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .footer-note {
+            margin-top: 18px;
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        .live-tag {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #25d366;
+            border-radius: 50%;
+            margin-right: 4px;
+            box-shadow: 0 0 8px #25d366;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Status Badge -->
+        <div class="badge-verified">
+            <span class="live-tag"></span>Session King Daniel Smith
+        </div>
+
+        <!-- Header -->
+        <h1 class="channel-title">SESSION KING CRICKET</h1>
+        <p class="channel-subtitle">Daniel Smith Special Coverage & Updates</p>
+
+        <!-- Stats Counter -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">106K+</div>
+                <div class="stat-label">Subscribers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3.1K+</div>
+                <div class="stat-label">Pending Joins</div>
+            </div>
+        </div>
+
+        <!-- Highlight Points -->
+        <div class="features-list">
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <span>Superfast Session Reports & Alerts</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔥</span>
+                <span>Match Analysis & Full Coverage</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">👑</span>
+                <span>Direct Access to Expert Insights</span>
+            </div>
+        </div>
+
+        <!-- Main CTA Button -->
+        <a href="https://telegram.me/+RWY8JQ36H0tmNjFl" target="_blank" class="btn-telegram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+            JOIN FREE TELEGRAM
+        </a>
+
+        <p class="footer-note">Free Entry • Limited Time Slot Available</p>
+    </div>
+
+</body>
+</html>
